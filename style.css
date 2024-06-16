@@ -1,54 +1,41 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
-.shake{
-    width: 80px;
-    height: 200px;
-}
-
 .FastFood {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding: 20px;
-    background-color: #f0f0f0;
+    max-width: 600px;
+    margin: 20px auto;
 }
-
 .product {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     margin: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
+.product img {
+    width: 200px;
+    height: 200px;
 }
-
-h2 {
-    font-size: 1.2em;
+.product .shake{
+    width: 90px;
+    height: 200px;
+}
+.product h2 {
     margin: 10px 0;
 }
-
-.price {
-    font-size: 1em;
-    color: #888;
+.product p {
     margin: 10px 0;
+    font-size: 18px;
 }
-
-.buy {
+.product .buy {
     background-color: orange;
     border: none;
     padding: 10px 20px;
@@ -58,35 +45,30 @@ h2 {
     font-weight: bold;
     cursor: pointer;
 }
-.minusBtn{
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-controls button {
+    background-color: orange;
     border: none;
-    background-color: rgb(235, 43, 43);
-    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
     color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 10px;
     width: 22px;
     height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    margin-right: 5px;
 }
-.plusBtn{
-    border: none;
-    background-color: rgb(56, 192, 56);
-    font-size: 20px;
-    color: white;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-.strawberry-milkshake{
-    width: 70px;
-    height: 190px;
+.quantity-controls span {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {

@@ -1,35 +1,41 @@
+// Отримуємо всі кнопки "ADD" і додаємо їм обробник подій
 document.querySelectorAll('.buy').forEach(button => {
     button.addEventListener('click', function() {
         const product = this.getAttribute('data-product');
-        this.style.display = 'none';
+        this.style.display = 'none'; // Ховаємо кнопку "ADD"
         const controls = document.querySelector(`.quantity-controls[data-product="${product}"]`);
         if (controls) {
-            controls.style.display = 'flex';
-            updateQuantity(product, 1);
+            controls.style.display = 'flex'; // Показуємо контроли кількості продукту
+            updateQuantity(product, 1); // Оновлюємо кількість продукту (додаємо 1)
         }
     });
 });
 
+// Отримуємо всі кнопки "+" і додаємо їм обробник подій
 document.querySelectorAll('.plus').forEach(button => {
     button.addEventListener('click', function() {
         const product = this.getAttribute('data-product');
-        updateQuantity(product, 1);
+        updateQuantity(product, 1); // Оновлюємо кількість продукту (додаємо 1)
     });
 });
 
+// Отримуємо всі кнопки "-" і додаємо їм обробник подій
 document.querySelectorAll('.minus').forEach(button => {
     button.addEventListener('click', function() {
         const product = this.getAttribute('data-product');
-        updateQuantity(product, -1);
+        updateQuantity(product, -1); // Оновлюємо кількість продукту (віднімаємо 1)
     });
 });
 
+// Функція для оновлення кількості продукту
 function updateQuantity(product, change) {
     const quantitySpan = document.querySelector(`.quantity[data-product="${product}"]`);
-    if (!quantitySpan) return;
+    if (!quantitySpan) return; // Якщо елемент не знайдено, виходимо з функції
 
     let quantity = parseInt(quantitySpan.textContent);
-    quantity += change;
+    quantity += change; // Збільшуємо або зменшуємо кількість продукту
+
+    // Якщо кількість менше або дорівнює 0, приховуємо контроли і показуємо кнопку "ADD"
     if (quantity <= 0) {
         quantity = 0;
         const controls = document.querySelector(`.quantity-controls[data-product="${product}"]`);
@@ -41,9 +47,10 @@ function updateQuantity(product, change) {
             }
         }
     }
-    quantitySpan.textContent = quantity;
 
-    // Відправляємо оновлені дані до бота, якщо Telegram і Telegram.WebApp доступні
+    quantitySpan.textContent = quantity; // Оновлюємо відображення кількості продукту
+
+    // Відправляємо оновлені дані до Telegram Web App, якщо вони доступні
     if (window.Telegram && window.Telegram.WebApp) {
         window.Telegram.WebApp.sendData(JSON.stringify({
             product: product,
@@ -51,10 +58,12 @@ function updateQuantity(product, change) {
         }));
     }
 }
+
+// Отримуємо кнопку "Додати в кошик" і додаємо їй обробник подій
 document.getElementById('addToCartBtn').addEventListener('click', function() {
-    // Отримуємо всі обрані продукти
     const selectedProducts = [];
     console.log(selectedProducts)
+    // Отримуємо всі обрані продукти
     document.querySelectorAll('.quantity').forEach(quantitySpan => {
         const product = quantitySpan.getAttribute('data-product');
         const quantity = parseInt(quantitySpan.textContent);
@@ -66,7 +75,7 @@ document.getElementById('addToCartBtn').addEventListener('click', function() {
         }
     });
 
-    // Відправляємо дані у телеграм
+    // Відправляємо дані у Telegram Web App, якщо вони доступні
     if (window.Telegram && window.Telegram.WebApp) {
         window.Telegram.WebApp.sendData(JSON.stringify(selectedProducts));
     } else {

@@ -51,3 +51,25 @@ function updateQuantity(product, change) {
         }));
     }
 }
+document.getElementById('addToCartBtn').addEventListener('click', function() {
+    // Отримуємо всі обрані продукти
+    const selectedProducts = [];
+    console.log(selectedProducts)
+    document.querySelectorAll('.quantity').forEach(quantitySpan => {
+        const product = quantitySpan.getAttribute('data-product');
+        const quantity = parseInt(quantitySpan.textContent);
+        if (quantity > 0) {
+            selectedProducts.push({
+                product: product,
+                quantity: quantity
+            });
+        }
+    });
+
+    // Відправляємо дані у телеграм
+    if (window.Telegram && window.Telegram.WebApp) {
+        window.Telegram.WebApp.sendData(JSON.stringify(selectedProducts));
+    } else {
+        console.error('Telegram or Telegram.WebApp is not available.');
+    }
+});

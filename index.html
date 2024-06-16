@@ -9,70 +9,70 @@
 </head>
 <body>
     <div class="FastFood">
-        <div class="product" data-product="burger">
-            <img src="telshopPhoto.jpg">
+        <div class="product">
+            <img src="telshopPhoto.jpg" alt="Burger">
             <h2>Гамбургер</h2>
-            <p class="price">500 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+            <p class="price">500 грн</p>
+            <button class="buy" data-product="burger">Додати</button>
+            <div class="quantity-controls" data-product="burger" style="display: none;">
+                <button class="minus" data-product="burger">-</button>
+                <span class="quantity" data-product="burger">0</span>
+                <button class="plus" data-product="burger">+</button>
             </div>
         </div>
-        <div class="product" data-product="fries">
-            <img src="картопляФРІ.jpg">
+        <div class="product">
+            <img src="картопляФРІ.jpg" alt="Fries">
             <h2>Картопля фрі</h2>
-            <p class="price">200 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+            <p class="price">200 грн</p>
+            <button class="buy" data-product="fries">Додати</button>
+            <div class="quantity-controls" data-product="fries" style="display: none;">
+                <button class="minus" data-product="fries">-</button>
+                <span class="quantity" data-product="fries">0</span>
+                <button class="plus" data-product="fries">+</button>
             </div>
         </div>
-        <div class="product" data-product="cola">
-            <img src="1656707425_3-flomaster-club-p-risunok-koka-koli-krasivo-3.jpg">
+        <div class="product">
+            <img src="кола.jpg" alt="Cola">
             <h2>Кока-Кола</h2>
-            <p class="price">100 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+            <p class="price">100 грн</p>
+            <button class="buy" data-product="cola">Додати</button>
+            <div class="quantity-controls" data-product="cola" style="display: none;">
+                <button class="minus" data-product="cola">-</button>
+                <span class="quantity" data-product="cola">0</span>
+                <button class="plus" data-product="cola">+</button>
             </div>
         </div>
-        <div class="product" data-product="pizza">
-            <img src="depositphotos_56862433-stock-illustration-salami-pizza-slice.jpg">
+        <div class="product">
+            <img src="піца.jpg" alt="Pizza">
             <h2>Піца</h2>
-            <p class="price">300 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+            <p class="price">300 грн</p>
+            <button class="buy" data-product="pizza">Додати</button>
+            <div class="quantity-controls" data-product="pizza" style="display: none;">
+                <button class="minus" data-product="pizza">-</button>
+                <span class="quantity" data-product="pizza">0</span>
+                <button class="plus" data-product="pizza">+</button>
             </div>
         </div>
-        <div class="product" data-product="icecream">
-            <img src="strawberry-milkshake-illustration-vector.jpg" class="strawberry-milkshake">
-            <h2>коктель</h2>
-            <p class="price">150 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+        <div class="product">
+            <img src="мілк-шейк.jpg" alt="Icecream" class="shake">
+            <h2>Морозиво</h2>
+            <p class="price">150 грн</p>
+            <button class="buy" data-product="icecream">Додати</button>
+            <div class="quantity-controls" data-product="icecream" style="display: none;">
+                <button class="minus" data-product="icecream">-</button>
+                <span class="quantity" data-product="icecream">0</span>
+                <button class="plus" data-product="icecream">+</button>
             </div>
         </div>
-        <div class="product" data-product="nuggets">
-            <img src="istockphoto-1211199921-612x612.jpg">
+        <div class="product">
+            <img src="нагетси.jpg" alt="Nuggets">
             <h2>Нагетси</h2>
-            <p class="price">250 UAH</p>
-            <button class="buy" onclick="addItem(this)">ADD</button>
-            <div class="quantity-controls" style="display: none;">
-                <button onclick="updateQuantity(this, -1)" class="minusBtn">-</button>
-                <span class="quantity">0</span>
-                <button onclick="updateQuantity(this, 1)" class="plusBtn">+</button>
+            <p class="price">250 грн</p>
+            <button class="buy" data-product="nuggets">Додати</button>
+            <div class="quantity-controls" data-product="nuggets" style="display: none;">
+                <button class="minus" data-product="nuggets">-</button>
+                <span class="quantity" data-product="nuggets">0</span>
+                <button class="plus" data-product="nuggets">+</button>
             </div>
         </div>
     </div>

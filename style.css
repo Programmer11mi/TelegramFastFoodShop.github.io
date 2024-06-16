@@ -58,6 +58,36 @@ h2 {
     font-weight: bold;
     cursor: pointer;
 }
+.minusBtn{
+    border: none;
+    background-color: rgb(235, 43, 43);
+    font-size: 20px;
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.plusBtn{
+    border: none;
+    background-color: rgb(56, 192, 56);
+    font-size: 20px;
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.strawberry-milkshake{
+    width: 70px;
+    height: 190px;
+}
 
 @media (max-width: 600px) {
     .FastFood {

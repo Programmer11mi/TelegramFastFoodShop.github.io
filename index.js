@@ -62,7 +62,7 @@ function updateQuantity(product, change) {
 // Отримуємо кнопку "Додати в кошик" і додаємо їй обробник подій
 document.getElementById('addToCartBtn').addEventListener('click', function() {
     const selectedProducts = [];
-    console.log(selectedProducts)
+
     // Отримуємо всі обрані продукти
     document.querySelectorAll('.quantity').forEach(quantitySpan => {
         const product = quantitySpan.getAttribute('data-product');

@@ -1,13 +1,18 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0px;
+    padding: 0;
 }
 .FastFood {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 960px;
 }
 .product {
     display: flex;
@@ -34,6 +39,7 @@ body {
 .product p {
     margin: 10px 0;
     font-size: 18px;
+    text-align: center; /* Center text for better view on small screens */
 }
 .product .buy {
     background-color: orange;
@@ -70,41 +76,72 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
-
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+#addToCartBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border: none;
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    border-radius: 13px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fa-cart-shopping{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+    font-size: 20px;
+}
+/* Media Queries */
 @media (max-width: 768px) {
-            .product {
-                padding: 15px;
-            }
+    .FastFood {
+        max-width: 100%;
+    }
+    .product img {
+        width: 150px;
+        height: 150px;
+    }
+    .product p {
+        font-size: 16px;
+    }
+}
 
-            .product p {
-                font-size: 16px;
-            }
-
-            .quantity-controls button {
-                padding: 8px;
-                font-size: 16px;
-            }
-
-            .quantity-controls span {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .product {
-                padding: 10px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .quantity-controls button {
-                padding: 6px;
-                font-size: 14px;
-            }
-
-            .quantity-controls span {
-                font-size: 14px;
-            }
-        }
+@media (max-width: 480px) {
+    .product {
+        padding: 20px;
+    }
+    .product img {
+        width: 120px;
+        height: 120px;
+    }
+    .product p {
+        font-size: 14px;
+    }
+    .product .buy {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .quantity-controls button {
+        padding: 8px;
+        margin: 0 5px;
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+    .quantity-controls span {
+        font-size: 16px;
+    }
+}

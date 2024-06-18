@@ -69,6 +69,8 @@ document.getElementById('addToCartBtn').addEventListener('click', function() {
         }
     });
 
+    console.log('Selected Products:', selectedProducts);  // Додай цей рядок для перевірки
+
     // Відправляємо дані у Telegram Web App, якщо вони доступні
-    tg.sendData(JSON.stringify(selectedProducts))
+    tg.sendData(JSON.stringify(selectedProducts));
 });

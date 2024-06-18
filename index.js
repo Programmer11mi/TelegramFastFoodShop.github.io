@@ -1,3 +1,5 @@
+let tg = window.Telegram.WebApp;
+tg.expand();
 // Отримуємо всі кнопки "ADD" і додаємо їм обробник подій
 document.querySelectorAll('.buy').forEach(button => {
     button.addEventListener('click', function() {
@@ -76,9 +78,5 @@ document.getElementById('addToCartBtn').addEventListener('click', function() {
     });
 
     // Відправляємо дані у Telegram Web App, якщо вони доступні
-    if (window.Telegram && window.Telegram.WebApp) {
-        window.Telegram.WebApp.sendData(JSON.stringify(selectedProducts));
-    } else {
-        console.error('Telegram or Telegram.WebApp is not available.');
-    }
+    tg.sendData(JSON.stringify(selectedProducts))
 });

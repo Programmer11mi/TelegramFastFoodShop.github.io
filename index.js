@@ -51,14 +51,6 @@ function updateQuantity(product, change) {
     }
 
     quantitySpan.textContent = quantity; // Оновлюємо відображення кількості продукту
-
-    // Відправляємо оновлені дані до Telegram Web App, якщо вони доступні
-    if (window.Telegram && window.Telegram.WebApp) {
-        window.Telegram.WebApp.sendData(JSON.stringify({
-            product: product,
-            quantity: quantity
-        }));
-    }
 }
 
 // Отримуємо кнопку "Додати в кошик" і додаємо їй обробник подій
